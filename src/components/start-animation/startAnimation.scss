@@ -1,0 +1,68 @@
+.animation-section {
+  text-align: center;
+  height: 100vh;
+  width: 100%;
+}
+
+.animation-title {
+  margin: 0;
+  padding: 0;
+  color: rgb(9, 185, 255);
+  font-size: 5em;
+  font-family: sans-serif;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+.video {
+  object-fit: cover;
+  height: 100vh;
+}
+.chart {
+  display: inline-block;
+  opacity: 0;
+  animation: animate 1.4s linear forwards;
+}
+
+@keyframes animate {
+  0% {
+    opacity: 0;
+
+    transform: rotateY(90deg);
+    filter: blur(25px);
+  }
+  100% {
+    opacity: 1;
+
+    transform: rotateY(0);
+    filter: blur(0);
+  }
+}
+
+.chart:nth-child(1) {
+  animation-delay: 0.1s;
+}
+.chart:nth-child(2) {
+  animation-delay: 0.3s;
+}
+.chart:nth-child(3) {
+  animation-delay: 0.5s;
+}
+.chart:nth-child(4) {
+  animation-delay: 0.7s;
+}
+.chart:nth-child(5) {
+  animation-delay: 0.9s;
+}
+.chart:nth-child(6) {
+  animation-delay: 1s;
+}
+.chart:nth-child(7) {
+  animation-delay: 1.2s;
+}
+.chart:nth-child(8) {
+  animation-delay: 1.3s;
+}
