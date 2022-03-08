@@ -1,7 +1,8 @@
 import React from "react";
 import { useParams } from "react-router-dom";
 import PageHeader from "../components/page-header/PageHeader";
-// import MovieGrid from "../components/movie-grid/MovieGrid";
+import MovieGrid from "../components/movie-grid/MovieGrid";
+
 import { category as cate } from "../api/tmdbApi";
 
 const Catalog = () => {
@@ -14,7 +15,7 @@ const Catalog = () => {
       </PageHeader>
       <div className="cotainer">
         <div className="section mb-3">
-          {/* <MovieGrid category={category} /> */}
+          <MovieGrid category={category} />
         </div>
       </div>
     </>
