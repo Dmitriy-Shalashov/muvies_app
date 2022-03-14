@@ -3,7 +3,7 @@ import React, { useState, useEffect, useRef } from "react";
 import SwiperCore, { Autoplay } from "swiper";
 import { Swiper, SwiperSlide } from "swiper/react";
 
-import { useNavigate } from "react-router";
+import { useNavigate } from "react-router-dom";
 
 import Button, { OutlineButton } from "../button/Button";
 import Modal, { ModalContent } from "../modal/Modal";
@@ -68,7 +68,7 @@ const HeroSlider = () => {
 };
 
 const HeroSliderItem = (props) => {
-  let history = useNavigate();
+  let navigate = useNavigate();
 
   const item = props.item;
   const backgroud = apiConfig.originalImage(
@@ -101,7 +101,9 @@ const HeroSliderItem = (props) => {
           <h2 className="title">{item.title}</h2>
           <div className="overview">{item.overview}</div>
           <div className="btns">
-            <Button onClick={() => console.log("watch now")}>Wath now</Button>
+            <Button onClick={() => navigate("/movie/" + item.id)}>
+              Wath now
+            </Button>
             <OutlineButton onClick={setModalActive}>
               Watch trailer
             </OutlineButton>
