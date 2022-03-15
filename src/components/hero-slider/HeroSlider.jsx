@@ -91,6 +91,7 @@ const HeroSliderItem = (props) => {
 
     modal.classList.toggle("active");
   };
+
   return (
     <div
       className={`hero-slide__item ${props.className} `}
@@ -102,7 +103,7 @@ const HeroSliderItem = (props) => {
           <div className="overview">{item.overview}</div>
           <div className="btns">
             <Button onClick={() => navigate("/movie/" + item.id)}>
-              Wath now
+              Watch now
             </Button>
             <OutlineButton onClick={setModalActive}>
               Watch trailer

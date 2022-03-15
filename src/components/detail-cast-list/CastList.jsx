@@ -9,7 +9,6 @@ import "./castList.scss";
 const CastList = (props) => {
   console.log(props);
   const { category } = useParams();
-  console.log(category);
   const [casts, setCasts] = useState([]);
 
   useEffect(() => {
@@ -24,7 +23,13 @@ const CastList = (props) => {
   return (
     <div className="casts">
       {casts.map((item, i) => (
-        <div key={i} className="casts__item">
+        <a
+          href={`https://en.wikipedia.org/wiki/${item.name}`}
+          target="_blank"
+          rel="noopener noreferrer"
+          key={i}
+          className="casts__item"
+        >
           <div
             className="casts__item-img"
             style={{
@@ -32,7 +37,7 @@ const CastList = (props) => {
             }}
           ></div>
           <p className="casts__item-name">{item.name}</p>
-        </div>
+        </a>
       ))}
     </div>
   );
