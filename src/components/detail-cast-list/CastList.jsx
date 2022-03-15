@@ -5,6 +5,7 @@ import tmdbApi from "../../api/tmdbApi";
 import apiConfig from "../../api/apiConfig";
 
 import "./castList.scss";
+import img from "../../assets/not-found-image.jpg";
 
 const CastList = (props) => {
   console.log(props);
@@ -33,7 +34,9 @@ const CastList = (props) => {
           <div
             className="casts__item-img"
             style={{
-              backgroundImage: `url(${apiConfig.w500Image(item.profile_path)})`,
+              backgroundImage: item.profile_path
+                ? `url(${apiConfig.w500Image(item.profile_path)})`
+                : `url(${img})`,
             }}
           ></div>
           <p className="casts__item-name">{item.name}</p>
