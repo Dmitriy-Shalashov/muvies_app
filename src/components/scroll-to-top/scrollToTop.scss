@@ -1,0 +1,6 @@
+@use '../../scss/' as *;
+
+.bx-chevrons-up:hover {
+  color: $main-color;
+  animation: none;
+}
