@@ -75,22 +75,23 @@ const MovieGrid = (props) => {
 
   return (
     <>
-      <div className="section mb-3">
-        <MovieSearch category={props.category} keyword={keyword} />
-      </div>
-
-      <div className="movie-grid">
-        {items.map((item, i) => (
-          <MovieCard category={props.category} item={item} key={i} />
-        ))}
-      </div>
-      {page < totalPage ? (
-        <div className="movie-grid__loadmore">
-          <OutlineButton className="small" onClick={loadMore}>
-            Load more
-          </OutlineButton>
+      <div className="container">
+        <div className="section mb-3">
+          <MovieSearch category={props.category} keyword={keyword} />
         </div>
-      ) : null}
+        <div className="movie-grid">
+          {items.map((item, i) => (
+            <MovieCard category={props.category} item={item} key={i} />
+          ))}
+        </div>
+        {page < totalPage ? (
+          <div className="movie-grid__loadmore">
+            <OutlineButton className="small" onClick={loadMore}>
+              Load more
+            </OutlineButton>
+          </div>
+        ) : null}
+      </div>
     </>
   );
 };
