@@ -30,6 +30,15 @@ export const ModalContent = (props) => {
     if (props.onClose) props.onClose();
   };
 
+  const handleOutsideClick = (event) => {
+    if (!event.path.includes(contentRef.current)) {
+      closeModal();
+    }
+  };
+  useEffect(() => {
+    document.body.addEventListener("click", handleOutsideClick);
+  });
+
   return (
     <div ref={contentRef} className="modal__content">
       {props.children}
