@@ -7,6 +7,8 @@ import Button from "../button/Button";
 import { category } from "../../api/tmdbApi";
 import apiConfig from "../../api/apiConfig";
 
+import img from "../../assets/not-found-image.jpg";
+
 const MovieCard = (props) => {
   const item = props.item;
   const link = "/" + category[props.category] + "/" + item.id;
@@ -18,7 +20,12 @@ const MovieCard = (props) => {
     <Link to={link}>
       <div
         className="movie-card"
-        style={{ backgroundImage: `url(${background})` }}
+        style={{
+          backgroundImage:
+            item.poster_path || item.backdrop_path
+              ? `url(${background})`
+              : `url(${img})`,
+        }}
       >
         <Button>
           <i className="bx bx-play" />
