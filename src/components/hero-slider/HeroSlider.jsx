@@ -122,7 +122,7 @@ const TrailerModal = (props) => {
   const item = props.item;
 
   const iframeRef = useRef(null);
-  const onClose = () => iframeRef.current.setAttribute("src", "");
+  const onClose = () => iframeRef.current?.setAttribute("src", "");
 
   return (
     <Modal active={false} id={`modal_${item.id}`}>

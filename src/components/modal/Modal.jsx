@@ -25,19 +25,23 @@ Modal.propTypes = {
 export const ModalContent = (props) => {
   const contentRef = useRef(null);
 
-  const closeModal = () => {
-    contentRef.current.parentNode.classList.remove("active");
-    if (props.onClose) props.onClose();
-  };
+  useEffect(() => {
+    document.body.addEventListener("click", handleOutsideClick);
+    return () => {
+      document.body.removeEventListener("click", handleOutsideClick);
+    };
+  });
 
   const handleOutsideClick = (event) => {
     if (!event.path.includes(contentRef.current)) {
       closeModal();
     }
   };
-  useEffect(() => {
-    document.body.addEventListener("click", handleOutsideClick);
-  });
+
+  const closeModal = () => {
+    contentRef.current?.parentNode.classList.remove("active");
+    if (props.onClose) props.onClose();
+  };
 
   return (
     <div ref={contentRef} className="modal__content">

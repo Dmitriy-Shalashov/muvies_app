@@ -4,6 +4,7 @@ import { useParams } from "react-router-dom";
 import CastList from "../../components/detail-cast-list/CastList";
 import VideoList from "../../components/detail-video-list/VideoList";
 import MovieList from "../../components/movie-list/MovieList";
+import Rating from "../../components/rating/Rating";
 import tmdbApi from "../../api/tmdbApi";
 import apiConfig from "../../api/apiConfig";
 
@@ -11,7 +12,6 @@ import "./detail.scss";
 
 const Detail = () => {
   const { category, id } = useParams();
-
   const [item, setItem] = useState(null);
 
   useEffect(() => {
@@ -59,9 +59,10 @@ const Detail = () => {
               <p className="overview">{item.overview}</p>
               <div className="cast">
                 <div className="section__header">
-                  <h2 className="cast__title">Casts</h2>
+                  <h2 className="cast__title">Casts:</h2>
                 </div>
                 <CastList id={item.id} />
+                <Rating vote={item.vote_average} />
               </div>
             </div>
           </div>

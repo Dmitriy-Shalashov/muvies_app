@@ -22,7 +22,7 @@ const CastList = (props) => {
   }, [category, props.id]);
 
   return (
-    <div className="casts">
+    <div className="casts mb-2">
       {casts.map((item, i) => (
         <a
           href={`https://en.wikipedia.org/wiki/${item.name}`}

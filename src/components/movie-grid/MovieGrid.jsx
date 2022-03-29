@@ -10,6 +10,7 @@ import Input from "../input/Inpit";
 import Button from "../button/Button";
 
 const MovieGrid = (props) => {
+  console.log(props);
   const [items, setItems] = useState([]);
   const [page, setPage] = useState(1);
   const [totalPage, setTotalPage] = useState(0);

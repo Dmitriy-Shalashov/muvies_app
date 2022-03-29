@@ -1,0 +1,30 @@
+@use '../../scss/' as *;
+
+.rating {
+  background-color: $shadow-color;
+  border-radius: 10px;
+  position: relative;
+  margin: 15px 0;
+  height: 10px;
+  width: 200px;
+  display: flex;
+  align-items: center;
+
+  &__value {
+    position: absolute;
+    right: -30px;
+  }
+
+  &__line {
+    background: linear-gradient(to left, $main-color, #ffffff);
+    border-radius: 10px;
+    color: #fff;
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+    height: 100%;
+    width: 0;
+    opacity: 0;
+    transition: 1s ease 0.3s;
+  }
+}
