@@ -5,9 +5,9 @@ import "./movieGrid.scss";
 import tmdbApi, { category, movieType, tvType } from "../../api/tmdbApi";
 
 import MovieCard from "../movie-card/MovieCard";
-import { OutlineButton } from "../button/Button";
+import Button from "../../common/button/Button";
+import OutlineButton from "../../common/button/OutlineButton";
 import Input from "../input/Inpit";
-import Button from "../button/Button";
 
 const MovieGrid = (props) => {
   console.log(props);

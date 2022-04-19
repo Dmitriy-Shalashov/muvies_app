@@ -1,7 +1,8 @@
 import React from "react";
 import { useNavigate } from "react-router-dom";
 
-import Button, { OutlineButton } from "../button/Button";
+import Button from "../../common/button/Button";
+import OutlineButton from "../../common/button/OutlineButton";
 
 import apiConfig from "../../api/apiConfig";
 import setModalActive from "./helpers/setModalActive";

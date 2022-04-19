@@ -2,7 +2,7 @@ import React from "react";
 import { useNavigate } from "react-router-dom";
 
 import Svg from "./Svg";
-import { OutlineButton } from "../../components/button/Button";
+import OutlineButton from "../../common/button/OutlineButton";
 import "./notFound.scss";
 
 const NotFound = () => {

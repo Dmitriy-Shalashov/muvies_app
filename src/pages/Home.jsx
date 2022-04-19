@@ -1,7 +1,7 @@
 import React from "react";
 import { Link } from "react-router-dom";
 
-import { OutlineButton } from "../components/button/Button";
+import OutlineButton from "../common/button/OutlineButton";
 import HeroSlider from "../components/hero-slider/HeroSlider";
 import MovieList from "../components/movie-list/MovieList";
 
