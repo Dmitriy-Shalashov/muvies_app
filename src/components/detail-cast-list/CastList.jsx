@@ -1,29 +1,24 @@
 import React, { useState, useEffect } from "react";
 import { useParams } from "react-router-dom";
 
-import tmdbApi from "../../api/tmdbApi";
 import apiConfig from "../../api/apiConfig";
+
+import getActors from "./helpers/getActors";
 
 import "./castList.scss";
 import img from "../../assets/not-found-image.jpg";
 
-const CastList = (props) => {
-  console.log(props);
+const CastList = ({ id }) => {
   const { category } = useParams();
-  const [casts, setCasts] = useState([]);
+  const [actors, setActors] = useState([]);
 
   useEffect(() => {
-    const getCredits = async () => {
-      const response = await tmdbApi.credits(category, props.id);
-      console.log(response);
-      setCasts(response.cast.slice(0, 6));
-    };
-    getCredits();
-  }, [category, props.id]);
+    getActors(setActors, category, id);
+  }, [category, id]);
 
   return (
     <div className="casts mb-2">
-      {casts.map((item, i) => (
+      {actors.map((item, i) => (
         <a
           href={`https://en.wikipedia.org/wiki/${item.name}`}
           target="_blank"
