@@ -13,17 +13,6 @@ const Button = ({ onClick, className, children }) => {
   );
 };
 
-// export const OutlineButton = ({ onClick, className, children }) => {
-//   return (
-//     <button
-//       className={`btn btn-outline ${className} `}
-//       onClick={onClick ? () => onClick() : null}
-//     >
-//       {children}
-//     </button>
-//   );
-// };
-
 Button.propTypes = {
   onClick: PropTypes.func,
 };
