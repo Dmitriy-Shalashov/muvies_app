@@ -6,8 +6,8 @@ import "swiper/swiper.min.css";
 // import StartAnimation from "./components/start-animation/StartAnimation";
 // import JoinHomePage from "./pages/JointHomePage";
 
-import Footer from "./components/footer/Footer";
-import Header from "./components/header/Header";
+import Footer from "./common/footer/Footer";
+import Header from "./common/header/Header";
 import RouteConfig from "./config/RouteConfig";
 
 function App() {
