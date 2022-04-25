@@ -4,7 +4,7 @@ import "./movieGrid.scss";
 
 import tmdbApi, { category, movieType, tvType } from "../../api/tmdbApi";
 
-import MovieCard from "../movie-card/MovieCard";
+import MovieCard from "../../common/movie-card/MovieCard";
 import Button from "../../common/button/Button";
 import OutlineButton from "../../common/button/OutlineButton";
 import Input from "../input/Inpit";

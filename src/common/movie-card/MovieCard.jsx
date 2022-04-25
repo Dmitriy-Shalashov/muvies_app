@@ -2,22 +2,20 @@ import React from "react";
 import "./movieCard.scss";
 
 import { Link } from "react-router-dom";
-import Button from "../../common/button/Button";
+import Button from "../button/Button";
 
-import { category } from "../../api/tmdbApi";
 import apiConfig from "../../api/apiConfig";
+import getLink from "./helpers/getLink";
 
 import img from "../../assets/not-found-image.jpg";
 
-const MovieCard = (props) => {
-  const item = props.item;
-  const link = "/" + category[props.category] + "/" + item.id;
+const MovieCard = ({ item, category }) => {
   const background = apiConfig.w500Image(
     item.poster_path || item.backdrop_path
   );
 
   return (
-    <Link to={link}>
+    <Link to={getLink(category, item.id)}>
       <div
         className="movie-card"
         style={{
