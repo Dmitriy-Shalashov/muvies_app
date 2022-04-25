@@ -7,7 +7,7 @@ import tmdbApi, { category, movieType, tvType } from "../../api/tmdbApi";
 import MovieCard from "../../common/movie-card/MovieCard";
 import Button from "../../common/button/Button";
 import OutlineButton from "../../common/button/OutlineButton";
-import Input from "../input/Inpit";
+import Input from "../../common/input/Inpit";
 
 const MovieGrid = (props) => {
   console.log(props);
