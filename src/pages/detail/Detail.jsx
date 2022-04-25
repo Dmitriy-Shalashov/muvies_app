@@ -4,7 +4,7 @@ import { useParams } from "react-router-dom";
 import CastList from "../../components/detail-cast-list/CastList";
 import VideoList from "../../components/detail-video-list/VideoList";
 import MovieList from "../../components/movie-list/MovieList";
-import Rating from "../../components/rating/Rating";
+import Rating from "../../common/rating/Rating";
 import tmdbApi from "../../api/tmdbApi";
 import apiConfig from "../../api/apiConfig";
 
