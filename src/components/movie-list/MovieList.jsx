@@ -8,7 +8,7 @@ import "./movieList.scss";
 // import { Link } from "react-router-dom";
 
 // import Button from "../button/Button";
-import MovieCard from "../movie-card/MovieCard";
+import MovieCard from "../../common/movie-card/MovieCard";
 
 import tmdbApi, { category } from "../../api/tmdbApi";
 // import apiConfig from "../../api/apiConfig";
