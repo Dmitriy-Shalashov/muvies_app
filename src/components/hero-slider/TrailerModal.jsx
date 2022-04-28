@@ -1,10 +1,13 @@
 import React, { useRef } from "react";
 
-import Modal, { ModalContent } from "../modal/Modal";
+import Modal from "../../common/modal/Modal";
+import ModalContent from "../../common/modal/ModalContent";
 
 const TrailerModal = ({ item }) => {
   const iframeRef = useRef(null);
-  const onClose = () => iframeRef.current?.setAttribute("src", "");
+  const onClose = () => {
+    iframeRef.current?.setAttribute("src", "");
+  };
 
   return (
     <Modal active={false} id={`modal_${item.id}`}>
