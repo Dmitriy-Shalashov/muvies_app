@@ -3,7 +3,7 @@ import { Link } from "react-router-dom";
 
 import OutlineButton from "../common/button/OutlineButton";
 import HeroSlider from "../components/hero-slider/HeroSlider";
-import MovieList from "../components/movie-list/MovieList";
+import MovieList from "../common/movie-list/MovieList";
 
 import { category, movieType, tvType } from "../api/tmdbApi";
 
