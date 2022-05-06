@@ -9,10 +9,13 @@ const Rating = ({ vote }) => {
       opacity: 1,
       width: `${vote * 10}%`,
     };
-    setTimeout(() => {
+    const delay = setTimeout(() => {
       setStyle(newStyle);
-    }, 400);
-  }, []);
+    }, 1000);
+    return () => {
+      clearTimeout(delay);
+    };
+  }, [vote]);
 
   return (
     <>
