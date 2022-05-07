@@ -2,7 +2,6 @@ import React from "react";
 import "./movieCard.scss";
 
 import { Link } from "react-router-dom";
-import Button from "../button/Button";
 
 import apiConfig from "../../api/apiConfig";
 import getLink from "./helpers/getLink";
@@ -25,9 +24,9 @@ const MovieCard = ({ item, category }) => {
               : `url(${img})`,
         }}
       >
-        <Button>
+        <div className="movie-card__btn">
           <i className="bx bx-play" />
-        </Button>
+        </div>
       </div>
       <h3>{item.title || item.name}</h3>
     </Link>
