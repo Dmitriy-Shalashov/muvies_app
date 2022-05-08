@@ -38,7 +38,7 @@ const MovieSearch = ({ cate, keyword }) => {
         value={searchword}
         onChange={(e) => setKeyword(e.target.value)}
       />
-      <Button className="small" onClick={() => goToSearch(cate, searchword)}>
+      <Button size="small" onClick={() => goToSearch(cate, searchword)}>
         Search
       </Button>
     </div>

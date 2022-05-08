@@ -1,5 +1,6 @@
 import React, { useRef, useEffect } from "react";
 import { Link, useLocation } from "react-router-dom";
+import classNames from "classnames";
 
 import ScrollToTop from "../../components/scroll-to-top/ScrollToTop";
 
@@ -12,7 +13,7 @@ import logo from "../../assets/tmovie.png";
 const Header = () => {
   const { pathname } = useLocation();
   const headerRef = useRef(null);
-  const active = headerNav.findIndex((e) => e.path === pathname);
+  const activeItem = headerNav.findIndex((e) => e.path === pathname);
 
   useEffect(() => {
     window.addEventListener("scroll", () => shrinkHeader(headerRef));
@@ -30,7 +31,12 @@ const Header = () => {
         </div>
         <ul className="header__nav">
           {headerNav.map((item, i) => (
-            <li key={item.id} className={`${i === active ? "active" : ""}`}>
+            <li
+              key={item.id}
+              className={classNames({
+                active: i === activeItem,
+              })}
+            >
               <Link to={item.path}>{item.display}</Link>
             </li>
           ))}
