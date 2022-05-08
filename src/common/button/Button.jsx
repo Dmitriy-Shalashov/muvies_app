@@ -1,12 +1,20 @@
 import React from "react";
+import classNames from "classnames";
 import "./button.scss";
 import PropTypes from "prop-types";
 
-const Button = ({ onClick, className, children }) => {
+const Button = ({ onClick, size, outline, children }) => {
   return (
     <button
-      className={`btn ${className}`}
-      onClick={onClick ? () => onClick() : null}
+      className={classNames(
+        "btn",
+        { "btn-outline": outline },
+        {
+          small: size === "small",
+          large: size === "large",
+        }
+      )}
+      onClick={onClick}
     >
       {children}
     </button>

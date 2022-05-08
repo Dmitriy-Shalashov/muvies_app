@@ -2,6 +2,7 @@ import React, { useState, useEffect } from "react";
 
 import SwiperCore, { Autoplay } from "swiper";
 import { Swiper, SwiperSlide } from "swiper/react";
+import classNames from "classnames";
 
 import HeroSliderItem from "./HeroSliderItem";
 import TrailerModal from "./TrailerModal";
@@ -32,7 +33,7 @@ const HeroSlider = () => {
             {({ isActive }) => (
               <HeroSliderItem
                 item={item}
-                className={`${isActive ? "active" : ""}`}
+                className={classNames({ active: isActive })}
               />
             )}
           </SwiperSlide>
