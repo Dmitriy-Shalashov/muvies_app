@@ -2,7 +2,6 @@ import React from "react";
 import { useNavigate } from "react-router-dom";
 
 import Button from "../../common/button/Button";
-import OutlineButton from "../../common/button/OutlineButton";
 
 import apiConfig from "../../api/apiConfig";
 import setModalActive from "./helpers/setModalActive";
@@ -27,9 +26,9 @@ const HeroSliderItem = ({ item, className }) => {
             <Button onClick={() => navigate("/movie/" + item.id)}>
               Watch now
             </Button>
-            <OutlineButton onClick={() => setModalActive(item)}>
+            <Button outline onClick={() => setModalActive(item)}>
               Watch trailer
-            </OutlineButton>
+            </Button>
           </div>
         </div>
         <div className="hero-slide__item__content__poster">
