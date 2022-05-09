@@ -3,7 +3,7 @@ import { useParams } from "react-router-dom";
 import "./movieGrid.scss";
 
 import MovieCard from "../../common/movie-card/MovieCard";
-import OutlineButton from "../../common/button/OutlineButton";
+import Button from "../../common/button/Button";
 import MovieSearch from "./MovieSearch";
 
 import loadMore from "./helpers/loadMore";
@@ -32,14 +32,15 @@ const MovieGrid = ({ cate }) => {
         </div>
         {page < totalPage ? (
           <div className="movie-grid__loadmore">
-            <OutlineButton
-              className="small"
+            <Button
+              size="small"
+              outline
               onClick={() =>
                 loadMore(cate, setItems, setPage, keyword, page, items)
               }
             >
               Load more
-            </OutlineButton>
+            </Button>
           </div>
         ) : null}
       </div>
