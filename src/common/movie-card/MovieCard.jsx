@@ -1,5 +1,6 @@
 import React from "react";
 import "./movieCard.scss";
+import PropTypes from "prop-types";
 
 import { Link } from "react-router-dom";
 
@@ -31,6 +32,11 @@ const MovieCard = ({ item, category }) => {
       <h3>{item.title || item.name}</h3>
     </Link>
   );
+};
+
+MovieCard.propTypes = {
+  item: PropTypes.object,
+  category: PropTypes.string,
 };
 
 export default MovieCard;

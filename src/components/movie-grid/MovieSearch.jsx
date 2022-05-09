@@ -1,4 +1,5 @@
 import React, { useState, useEffect, useCallback } from "react";
+import PropTypes from "prop-types";
 
 import { useNavigate } from "react-router-dom";
 import { category } from "../../api/tmdbApi";
@@ -43,6 +44,11 @@ const MovieSearch = ({ cate, keyword }) => {
       </Button>
     </div>
   );
+};
+
+MovieSearch.propTypes = {
+  cate: PropTypes.string,
+  keyword: PropTypes.string,
 };
 
 export default MovieSearch;

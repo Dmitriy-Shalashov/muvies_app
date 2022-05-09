@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from "react";
 import { useParams } from "react-router-dom";
+import PropTypes from "prop-types";
 
 import ItemVideo from "./ItemVideo";
 import getVideos from "./helpers/getVideos";
@@ -20,6 +21,10 @@ const VideoList = ({ id }) => {
       ))}
     </>
   );
+};
+
+VideoList.propTypes = {
+  id: PropTypes.number,
 };
 
 export default VideoList;

@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from "react";
 import "./rating.scss";
+import PropTypes from "prop-types";
 
 const Rating = ({ vote }) => {
   const [style, setStyle] = useState({});
@@ -28,6 +29,10 @@ const Rating = ({ vote }) => {
       </div>
     </>
   );
+};
+
+Rating.propTypes = {
+  vote: PropTypes.number,
 };
 
 export default Rating;

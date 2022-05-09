@@ -28,8 +28,9 @@ const MovieList = ({ type, category, id }) => {
 };
 
 MovieList.propTypes = {
-  category: PropTypes.string.isRequired,
   type: PropTypes.string.isRequired,
+  category: PropTypes.string.isRequired,
+  id: PropTypes.number,
 };
 
 export default MovieList;

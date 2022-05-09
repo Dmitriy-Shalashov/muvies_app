@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from "react";
 import { useParams } from "react-router-dom";
 import "./movieGrid.scss";
+import PropTypes from "prop-types";
 
 import MovieCard from "../../common/movie-card/MovieCard";
 import Button from "../../common/button/Button";
@@ -46,6 +47,10 @@ const MovieGrid = ({ cate }) => {
       </div>
     </>
   );
+};
+
+MovieGrid.propTypes = {
+  cate: PropTypes.string,
 };
 
 export default MovieGrid;

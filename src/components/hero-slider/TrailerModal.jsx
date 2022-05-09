@@ -1,4 +1,5 @@
 import React, { useRef } from "react";
+import PropTypes from "prop-types";
 
 import Modal from "../../common/modal/Modal";
 import ModalContent from "../../common/modal/ModalContent";
@@ -21,6 +22,10 @@ const TrailerModal = ({ item }) => {
       </ModalContent>
     </Modal>
   );
+};
+
+TrailerModal.propTypes = {
+  item: PropTypes.object,
 };
 
 export default TrailerModal;

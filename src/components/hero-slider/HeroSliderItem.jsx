@@ -1,5 +1,6 @@
 import React from "react";
 import { useNavigate } from "react-router-dom";
+import PropTypes from "prop-types";
 
 import Button from "../../common/button/Button";
 
@@ -37,6 +38,11 @@ const HeroSliderItem = ({ item, className }) => {
       </div>
     </div>
   );
+};
+
+HeroSliderItem.propTypes = {
+  item: PropTypes.object,
+  className: PropTypes.string,
 };
 
 export default HeroSliderItem;
