@@ -30,7 +30,8 @@ const ModalContent = ({ onClose, children }) => {
 };
 
 ModalContent.propTypes = {
-  onclose: PropTypes.func,
+  onClose: PropTypes.func,
+  children: PropTypes.element,
 };
 
 export default ModalContent;

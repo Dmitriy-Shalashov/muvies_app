@@ -24,8 +24,9 @@ const Modal = ({ active, id, children }) => {
 };
 
 Modal.propTypes = {
-  param: PropTypes.bool,
+  active: PropTypes.bool,
   id: PropTypes.string,
+  children: PropTypes.element,
 };
 
 export default Modal;

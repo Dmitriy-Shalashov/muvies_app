@@ -1,5 +1,6 @@
 import React, { useRef, useEffect } from "react";
 import calcHeight from "./helpers/calcHeight";
+import PropTypes from "prop-types";
 
 const ItemVideo = ({ item }) => {
   const iframeRef = useRef(null);
@@ -21,6 +22,10 @@ const ItemVideo = ({ item }) => {
       ></iframe>
     </div>
   );
+};
+
+ItemVideo.propTypes = {
+  item: PropTypes.object.isRequired,
 };
 
 export default ItemVideo;

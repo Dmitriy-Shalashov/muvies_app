@@ -7,6 +7,7 @@ import getActors from "./helpers/getActors";
 
 import "./castList.scss";
 import img from "../../assets/not-found-image.jpg";
+import PropTypes from "prop-types";
 
 const CastList = ({ id }) => {
   const { category } = useParams();
@@ -39,6 +40,10 @@ const CastList = ({ id }) => {
       ))}
     </div>
   );
+};
+
+CastList.propTypes = {
+  id: PropTypes.number,
 };
 
 export default CastList;
