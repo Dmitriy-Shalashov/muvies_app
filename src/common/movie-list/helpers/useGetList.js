@@ -2,7 +2,7 @@ import { useState, useEffect } from "react";
 import tmdbApi, { category as cate } from "../../../api/tmdbApi";
 
 function useGetList(type, category, id) {
-  const [result, setResult] = useState([]);
+  const [dataMovieList, setDataMovieList] = useState([]);
 
   useEffect(() => {
     let response = null;
@@ -20,15 +20,16 @@ function useGetList(type, category, id) {
             response = await tmdbApi.getTvList(type, { params });
             break;
           default:
-          // "no default case";
+            // "no default case";
+            response = {};
         }
       }
-      setResult(response.results);
+      setDataMovieList(response.results);
     }
     getList();
   }, [type, category, id]);
 
-  return result;
+  return dataMovieList;
 }
 
 export default useGetList;
