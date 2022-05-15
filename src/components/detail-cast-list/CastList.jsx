@@ -1,9 +1,9 @@
-import React, { useState, useEffect } from "react";
+import React from "react";
 import { useParams } from "react-router-dom";
 
 import apiConfig from "../../api/apiConfig";
 
-import getActors from "./helpers/getActors";
+import useGetActors from "./hooks/useGetActors";
 
 import "./castList.scss";
 import img from "../../assets/not-found-image.jpg";
@@ -11,15 +11,11 @@ import PropTypes from "prop-types";
 
 const CastList = ({ id }) => {
   const { category } = useParams();
-  const [actors, setActors] = useState([]);
-
-  useEffect(() => {
-    getActors(setActors, category, id);
-  }, [category, id]);
+  const actorsList = useGetActors(category, id);
 
   return (
     <div className="casts mb-2">
-      {actors.map((item, i) => (
+      {actorsList.map((item, i) => (
         <a
           href={`https://en.wikipedia.org/wiki/${item.name}`}
           target="_blank"
