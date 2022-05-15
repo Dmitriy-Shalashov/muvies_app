@@ -4,7 +4,7 @@ import PropTypes from "prop-types";
 import { SwiperSlide, Swiper } from "swiper/react";
 
 import MovieCard from "../movie-card/MovieCard";
-import useGetList from "./helpers/useGetList";
+import useGetList from "./hooks/useGetList";
 import "./movieList.scss";
 
 const MovieList = ({ type, category, id }) => {

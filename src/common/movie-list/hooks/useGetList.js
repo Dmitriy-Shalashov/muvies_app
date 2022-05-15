@@ -5,10 +5,10 @@ function useGetList(type, category, id) {
   const [dataMovieList, setDataMovieList] = useState([]);
 
   useEffect(() => {
-    let response = null;
+    let response = "hello";
     const params = {};
 
-    async function getList() {
+    (async function getList() {
       if (type === "similar") {
         response = await tmdbApi.similar(category, id);
       } else {
@@ -25,8 +25,7 @@ function useGetList(type, category, id) {
         }
       }
       setDataMovieList(response.results);
-    }
-    getList();
+    })();
   }, [type, category, id]);
 
   return dataMovieList;
