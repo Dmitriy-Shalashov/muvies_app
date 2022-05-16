@@ -1,22 +1,18 @@
-import React, { useState, useEffect } from "react";
+import React from "react";
 import { useParams } from "react-router-dom";
 import PropTypes from "prop-types";
 
 import ItemVideo from "./ItemVideo";
-import getVideos from "./helpers/getVideos";
+import useGetVideos from "./hooks/useGetVideos";
 import "./videoList.scss";
 
 const VideoList = ({ id }) => {
   const { category } = useParams();
-  const [videos, setVideos] = useState([]);
-
-  useEffect(() => {
-    getVideos(category, id, setVideos);
-  }, [category, id]);
+  const dataVideoList = useGetVideos(category, id);
 
   return (
     <>
-      {videos.map((item, i) => (
+      {dataVideoList.map((item, i) => (
         <ItemVideo key={i} item={item} />
       ))}
     </>
