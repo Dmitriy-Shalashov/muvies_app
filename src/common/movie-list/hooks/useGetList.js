@@ -5,7 +5,7 @@ function useGetList(type, category, id) {
   const [dataMovieList, setDataMovieList] = useState([]);
 
   useEffect(() => {
-    let response = "hello";
+    let response = null;
     const params = {};
 
     (async function getList() {
