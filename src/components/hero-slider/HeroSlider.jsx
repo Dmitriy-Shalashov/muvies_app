@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from "react";
+import React from "react";
 
 import SwiperCore, { Autoplay } from "swiper";
 import { Swiper, SwiperSlide } from "swiper/react";
@@ -9,15 +9,12 @@ import TrailerModal from "./TrailerModal";
 
 import "./heroSlider.scss";
 
-import getMovies from "./helpers/getMovies";
+import useGetRandomMovies from "./hooks/useGetRandomMovies";
 
 const HeroSlider = () => {
   SwiperCore.use([Autoplay]);
-  const [moveieItems, setMovieItems] = useState([]);
 
-  useEffect(() => {
-    getMovies(setMovieItems);
-  }, []);
+  const moviesList = useGetRandomMovies();
 
   return (
     <div className="hero-slider">
@@ -28,7 +25,7 @@ const HeroSlider = () => {
         slidesPerView={1}
         autoplay={{ delay: 7000 }}
       >
-        {moveieItems.map((item, i) => (
+        {moviesList.map((item, i) => (
           <SwiperSlide key={i}>
             {({ isActive }) => (
               <HeroSliderItem
@@ -39,7 +36,7 @@ const HeroSlider = () => {
           </SwiperSlide>
         ))}
       </Swiper>
-      {moveieItems.map((item, i) => (
+      {moviesList.map((item, i) => (
         <TrailerModal key={i} item={item} />
       ))}
     </div>
