@@ -6,8 +6,12 @@ function useGetDetail(category, id) {
 
   useEffect(() => {
     (async function getDetail() {
-      const response = await tmdbApi.detail(category, id, { params: {} });
-      setDataDetail(response);
+      try {
+        const response = await tmdbApi.detail(category, id, { params: {} });
+        setDataDetail(response);
+      } catch (error) {
+        console.log(`error in useGetDetail ==> ${error}`);
+      }
     })();
   }, [category, id]);
 
