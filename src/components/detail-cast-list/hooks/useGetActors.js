@@ -6,8 +6,12 @@ function useGetActors(category, id) {
 
   useEffect(() => {
     (async function getActors() {
-      const response = await tmdbApi.credits(category, id);
-      setActorsList(response.cast.slice(0, 6));
+      try {
+        const response = await tmdbApi.credits(category, id);
+        setActorsList(response.cast.slice(0, 6));
+      } catch (error) {
+        console.log(`error in useGetActors ==> ${error}`);
+      }
     })();
   }, [category, id]);
   return actorsList;

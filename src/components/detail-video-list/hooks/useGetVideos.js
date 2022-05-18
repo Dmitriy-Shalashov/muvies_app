@@ -6,8 +6,12 @@ function useGetVideos(category, id) {
 
   useEffect(() => {
     (async function getVideos() {
-      const response = await tmdbApi.getVideos(category, id);
-      setDataVideoList(response.results.slice(0, 2));
+      try {
+        const response = await tmdbApi.getVideos(category, id);
+        setDataVideoList(response.results.slice(0, 2));
+      } catch (error) {
+        console.log(`error in useGetVideos ==> ${error}`);
+      }
     })();
   }, [category, id]);
   return dataVideoList;
