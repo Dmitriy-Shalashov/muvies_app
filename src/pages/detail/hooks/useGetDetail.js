@@ -9,6 +9,7 @@ function useGetDetail(category, id) {
       try {
         const response = await tmdbApi.detail(category, id, { params: {} });
         setDataDetail(response);
+        window.scrollTo({ top: 0, behavior: "smooth" });
       } catch (error) {
         console.log(`error in useGetDetail ==> ${error}`);
       }
