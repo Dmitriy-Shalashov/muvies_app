@@ -36,6 +36,8 @@ function useGetDataGrid(cate, keyword) {
         }
         setDataGrid(response.results);
         settotalPages(response.total_pages);
+
+        window.scrollTo({ top: 0, behavior: "smooth" });
       } catch (error) {
         console.log(`error in useGetDataGrid ==> ${error}`);
       }
