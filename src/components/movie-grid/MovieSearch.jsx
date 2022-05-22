@@ -11,13 +11,19 @@ const MovieSearch = ({ cate, keyword }) => {
   const navigate = useNavigate();
 
   const [searchword, setKeyword] = useState(keyword ? keyword : "");
+  const [visible, setVisible] = useState(false);
 
   const goToSearch = useCallback(() => {
     if (searchword.trim().length > 0) {
       navigate(`/${category[cate]}/search/${searchword}`);
-      setKeyword("");
+      setTimeout(() => {
+        setKeyword("");
+        setVisible(false);
+      }, 3000);
+    } else {
+      setVisible(!visible);
     }
-  }, [searchword, cate, navigate]);
+  }, [searchword, cate, visible, navigate]);
 
   useEffect(() => {
     const enterEvent = (e) => {
@@ -36,9 +42,10 @@ const MovieSearch = ({ cate, keyword }) => {
     <div className="movie-search">
       <Input
         type="text"
-        placeholder="Enter keyword"
+        placeholder={visible ? "Please enter your choice" : "Enter keyword"}
         value={searchword}
         onChange={(e) => setKeyword(e.target.value)}
+        error={visible}
       />
       <Button size="small" onClick={() => goToSearch(cate, searchword)}>
         Search
