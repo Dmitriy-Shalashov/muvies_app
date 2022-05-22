@@ -9,3 +9,7 @@ input {
   color: $txt-color;
   font-family: $font-family;
 }
+
+.error::placeholder {
+  color: $main-color;
+}
