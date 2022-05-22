@@ -1,9 +1,11 @@
 import React from "react";
+import { motion } from "framer-motion";
 import { useParams } from "react-router-dom";
 
 import apiConfig from "../../api/apiConfig";
 
 import useGetActors from "./hooks/useGetActors";
+import motionSetForActorsList from "./helpes/motionSetForActorsList";
 
 import "./castList.scss";
 import img from "../../assets/not-found-image.jpg";
@@ -16,12 +18,16 @@ const CastList = ({ id }) => {
   return (
     <div className="casts mb-2">
       {actorsList.map((item, i) => (
-        <a
+        <motion.a
           href={`https://en.wikipedia.org/wiki/${item.name}`}
           target="_blank"
           rel="noopener noreferrer"
           key={i}
           className="casts__item"
+          variants={motionSetForActorsList}
+          initial="hidden"
+          animate="visible"
+          custom={i}
         >
           <div
             className="casts__item-img"
@@ -32,7 +38,7 @@ const CastList = ({ id }) => {
             }}
           ></div>
           <p className="casts__item-name">{item.name}</p>
-        </a>
+        </motion.a>
       ))}
     </div>
   );
