@@ -15,6 +15,7 @@ const MovieSearch = ({ cate, keyword }) => {
   const goToSearch = useCallback(() => {
     if (searchword.trim().length > 0) {
       navigate(`/${category[cate]}/search/${searchword}`);
+      setKeyword("");
     }
   }, [searchword, cate, navigate]);
 
