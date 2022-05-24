@@ -29,6 +29,11 @@
     padding-right: 8rem;
   }
 
+  p {
+    position: absolute;
+    color: $main-color;
+  }
+
   button {
     position: absolute;
     right: 0;

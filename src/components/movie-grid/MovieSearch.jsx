@@ -10,20 +10,28 @@ import Button from "../../common/button/Button";
 const MovieSearch = ({ cate, keyword }) => {
   const navigate = useNavigate();
 
-  const [searchword, setKeyword] = useState(keyword ? keyword : "");
+  const [searchKeyword, setSearchKeyword] = useState(keyword ? keyword : "");
   const [visible, setVisible] = useState(false);
+  const [error, setError] = useState(false);
 
   const goToSearch = useCallback(() => {
-    if (searchword.trim().length > 0) {
-      navigate(`/${category[cate]}/search/${searchword}`);
+    let regexp = /^[a-zA-Z]/;
+
+    if (!searchKeyword) {
+      setVisible(true);
+      setError(false);
+    } else if (regexp.test(searchKeyword)) {
+      navigate(`/${category[cate]}/search/${searchKeyword}`);
+      setError(false);
       setTimeout(() => {
-        setKeyword("");
-        setVisible(false);
-      }, 3000);
+        setSearchKeyword("");
+      }, 2000);
     } else {
-      setVisible(!visible);
+      setError(true);
+      setVisible(false);
+      setSearchKeyword("");
     }
-  }, [searchword, cate, visible, navigate]);
+  }, [searchKeyword, cate, navigate]);
 
   useEffect(() => {
     const enterEvent = (e) => {
@@ -36,18 +44,19 @@ const MovieSearch = ({ cate, keyword }) => {
     return () => {
       document.removeEventListener("keyup", enterEvent);
     };
-  }, [searchword, goToSearch]);
+  }, [searchKeyword, goToSearch]);
 
   return (
     <div className="movie-search">
       <Input
         type="text"
         placeholder={visible ? "Please enter your choice" : "Enter keyword"}
-        value={searchword}
-        onChange={(e) => setKeyword(e.target.value)}
+        value={searchKeyword}
+        onChange={(e) => setSearchKeyword(e.target.value)}
         error={visible}
       />
-      <Button size="small" onClick={() => goToSearch(cate, searchword)}>
+      {error && <p>please enter your choice on english </p>}
+      <Button size="small" onClick={() => goToSearch(cate, searchKeyword)}>
         Search
       </Button>
     </div>
